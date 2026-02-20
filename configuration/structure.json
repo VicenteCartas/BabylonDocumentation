@@ -258,6 +258,107 @@
                 "featuresDeepDive": {
                     "friendlyName": "Deep Dive",
                     "children": {
+                        "2d": {
+                            "friendlyName": "2D Game Engine",
+                            "children": {
+                                "intro": {
+                                    "friendlyName": "Introduction",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/intro"
+                                },
+                                "sprites-and-animation": {
+                                    "friendlyName": "Sprites & Animation",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/sprites-and-animation"
+                                },
+                                "camera2d": {
+                                    "friendlyName": "Camera2D",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/camera2d"
+                                },
+                                "tilemaps": {
+                                    "friendlyName": "Tilemaps & Tiled",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/tilemaps"
+                                },
+                                "collision": {
+                                    "friendlyName": "Collision Detection",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/collision"
+                                },
+                                "physics": {
+                                    "friendlyName": "Physics (Planck.js)",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/physics"
+                                },
+                                "input-mapping": {
+                                    "friendlyName": "Input Mapping",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/input-mapping"
+                                },
+                                "pathfinding": {
+                                    "friendlyName": "Pathfinding",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/pathfinding"
+                                },
+                                "grid-system": {
+                                    "friendlyName": "Grid System",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/grid-system"
+                                },
+                                "lighting": {
+                                    "friendlyName": "GPU Lighting",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/lighting"
+                                },
+                                "particles": {
+                                    "friendlyName": "Particles",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/particles"
+                                },
+                                "tween-easing": {
+                                    "friendlyName": "Tween & Easing",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/tween-easing"
+                                },
+                                "state-machine": {
+                                    "friendlyName": "State Machine",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/state-machine"
+                                },
+                                "text-and-ui": {
+                                    "friendlyName": "Text & UI",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/text-and-ui"
+                                },
+                                "nine-slice": {
+                                    "friendlyName": "9-Slice Sprites",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/nine-slice"
+                                },
+                                "scene-transitions": {
+                                    "friendlyName": "Scene Transitions",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/scene-transitions"
+                                },
+                                "audio": {
+                                    "friendlyName": "Audio",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/audio"
+                                },
+                                "isometric": {
+                                    "friendlyName": "Isometric Games",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/isometric"
+                                },
+                                "turn-based": {
+                                    "friendlyName": "Turn-Based Games",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/turn-based"
+                                }
+                            },
+                            "content": "features/featuresDeepDive/2d"
+                        },
                         "animation": {
                             "friendlyName": "Animation",
                             "children": {

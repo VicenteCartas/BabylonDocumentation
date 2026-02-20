@@ -1,22 +1,30 @@
 ---
 title: Introduction to Babylon.js 2D
 description: Getting started with Babylon.js 2D game engine capabilities
-keywords: 2d, game engine, sprites, tilemap, camera
+keywords: 2d, game engine, sprites, tilemap, camera, lighting, physics, state machine
 ---
 
 # Introduction to Babylon.js 2D
 
-Babylon.js 2D (`@babylonjs/2d`) is a dedicated 2D game engine package that provides sprites, tilemaps, 2D physics, collision detection, camera controls, and input mapping. It is designed for building complete 2D games — from side-scrollers to isometric and turn-based strategy games.
+Babylon.js 2D (`@babylonjs/2d`) is a dedicated 2D game engine package that provides GPU-accelerated sprite rendering, tilemaps, physics, collision, camera, input mapping, lighting, tweens, and more. It is designed for building complete 2D games — from side-scrollers to isometric RPGs and turn-based strategy.
 
 ## Key Features
 
 - **Sprite rendering** with texture atlas support, animation, tinting, and flip
-- **Tilemap system** with Tiled editor integration
-- **2D camera** with follow, zoom, bounds, and screen shake
+- **Tilemap system** with Tiled editor integration and animated tiles
+- **2D camera** with follow, zoom, bounds, parallax, and screen shake
 - **2D collision detection** with AABB, circle, and polygon shapes
 - **2D physics** via plugin architecture (Planck.js default)
 - **Input mapping** for keyboard, mouse, touch, and gamepad
-- **Pathfinding** with A* on grids
+- **Pathfinding** with A* on grids and movement range queries
+- **GPU lighting** with point lights, spotlights, and ambient (forward rendered per-pixel)
+- **Tween & easing** with 16 easing curves, chaining, and looping
+- **State machine** for game AI and logic with condition-based transitions
+- **Text2D** for in-world text labels and HUD elements
+- **9-slice sprites** for resizable UI panels and buttons
+- **Scene transitions** with fade and slide effects
+- **Grid system** for square and hex grids with coordinate helpers
+- **Audio** integration with Babylon.js AudioV2
 
 ## Installation
 
@@ -76,12 +84,20 @@ engine.runRenderLoop(() => {
 
 | 2D Class | Purpose |
 |----------|---------|
-| `Scene2D` | Manages 2D nodes, update loop, and rendering |
+| `Scene2D` | Manages 2D nodes, update loop, rendering, and lighting |
 | `Node2D` | Base class for all 2D entities (transform, hierarchy, z-ordering) |
 | `Sprite2D` | Textured quad with tint, flip, and alpha blending |
 | `AnimatedSprite2D` | Sprite with frame-based animation playback |
-| `Camera2D` | Viewport control with follow, zoom, bounds, and shake |
+| `Camera2D` | Viewport control with follow, zoom, bounds, parallax, and shake |
 | `SpriteSheet` | Defines frames and animations from a texture atlas |
+| `Tilemap2D` | Tile-based level rendering with animated tiles |
+| `Text2D` | In-world text labels rendered to dynamic textures |
+| `NineSliceSprite2D` | Resizable UI panels with undistorted borders |
+| `LightingManager2D` | GPU forward lighting (point, spot, ambient — up to 16 lights) |
+| `Tween2D` | Smooth value interpolation with 16 easing curves |
+| `StateMachine2D` | Finite state machine for AI and game logic |
+| `InputMap2D` | Action-based input mapping (keyboard, mouse, touch, gamepad) |
+| `PlanckPhysicsEngine` | 2D physics via Planck.js (Box2D port) |
 
 ### Sharing the Engine
 
@@ -96,6 +112,11 @@ engine.runRenderLoop(() => {
 
 ## Next Steps
 
-- [Sprites and Animation](/features/featuresDeepDive/2d/spritesAndAnimation) — Working with Sprite2D, SpriteSheet, and AnimatedSprite2D
+- [Sprites and Animation](/features/featuresDeepDive/2d/sprites-and-animation) — Working with Sprite2D, SpriteSheet, and AnimatedSprite2D
 - [Camera2D](/features/featuresDeepDive/2d/camera2d) — Follow targets, zoom, bounds, and screen shake
-- [Tilemaps and Tiled](/features/featuresDeepDive/2d/tilemapsAndTiled) — Loading and rendering tile-based levels
+- [Tilemaps](/features/featuresDeepDive/2d/tilemaps) — Loading and rendering tile-based levels
+- [GPU Lighting](/features/featuresDeepDive/2d/lighting) — Per-pixel forward lighting with point lights and spotlights
+- [Physics](/features/featuresDeepDive/2d/physics) — Planck.js integration for rigid body physics
+- [Input Mapping](/features/featuresDeepDive/2d/input-mapping) — Keyboard, mouse, touch, and gamepad
+- [State Machine](/features/featuresDeepDive/2d/state-machine) — FSM for game AI and logic
+- [Tween & Easing](/features/featuresDeepDive/2d/tween-easing) — Smooth animations and transitions

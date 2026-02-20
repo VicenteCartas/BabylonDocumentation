@@ -88,7 +88,7 @@ These methods account for the camera's position, zoom, and viewport size.
 | Property | Type | Description |
 |----------|------|-------------|
 | `position` | `Vector2` | Camera center in world coordinates |
-| `zoom` | `number` | Zoom factor (>1 = zoom in, <1 = zoom out) |
+| `zoom` | `number` | Zoom factor (&gt;1 = zoom in, &lt;1 = zoom out) |
 | `viewportWidth` | `number` | Viewport width in pixels |
 | `viewportHeight` | `number` | Viewport height in pixels |
 
