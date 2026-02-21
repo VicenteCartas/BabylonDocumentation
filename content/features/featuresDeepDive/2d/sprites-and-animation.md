@@ -40,8 +40,7 @@ Sprites auto-register with the most recently created `Scene2D`, or you can pass 
 const player = new Sprite2D("player", scene2D);
 ```
 
-<!-- <Playground id="#EP0ZJV#1" title="Sprite2D Basics" description="Texture, tint, flip, and sourceRect" /> -->
-Playground **Sprite2D Basics** will go here
+Playground **Sprite2D Basics** will go here (id: #EP0ZJV#1)
 
 ### Properties
 
@@ -100,8 +99,7 @@ player.play("walk");       // Loop the walk animation
 player.play("jump", false); // Play jump once
 ```
 
-<!-- <Playground id="#T6Q16K" title="Animated Sprites" description="SpriteSheet, AnimatedSprite2D, and animation playback" /> -->
-Playground **Animated Sprites** will go here
+Playground **Animated Sprites** will go here (id: #T6Q16K)
 
 ### Playback Control
 

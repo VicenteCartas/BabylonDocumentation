@@ -46,8 +46,7 @@ Babylon.js 2D uses a **Y-down, top-left origin** coordinate system with pixel un
 
 ## Hello World
 
-<!-- <Playground id="#B9J5GF" title="Hello World 2D" description="Minimal 2D scene with colored sprite quads arranged along a diagonal." isMain={true} category="2D" /> -->
-Playground **Hello World 2D** will go here
+Playground **Hello World 2D** will go here (id: #B9J5GF)
 
 ```typescript
 import { Engine } from "@babylonjs/core/Engines/engine";
@@ -65,10 +64,10 @@ camera.setViewport(engine.getRenderWidth(), engine.getRenderHeight());
 
 // Create a sprite
 const texture = new Texture("player.png", null);
-const player = new Sprite2D("player", texture);
+const player = new Sprite2D("player");
+player.texture = texture;
 player.position.x = 400;
 player.position.y = 300;
-scene.addNode(player);
 
 // Game loop
 engine.runRenderLoop(() => {
@@ -113,8 +112,7 @@ engine.runRenderLoop(() => {
 });
 ```
 
-<!-- <Playground id="#03W08W" title="2D + 3D Compositing" description="Renders a 3D rotating box with a 2D sprite overlay on the same canvas." category="2D" /> -->
-Playground **2D + 3D Compositing** will go here
+Playground **2D + 3D Compositing** will go here (id: #03W08W)
 
 ## Next Steps
 
