@@ -23,15 +23,24 @@ import { Scene2D, Sprite2D } from "@babylonjs/2d";
 import { Engine, Texture } from "@babylonjs/core";
 
 const engine = new Engine(canvas);
-const scene = new Scene2D(engine);
+const scene2D = new Scene2D(engine);
 
 const texture = new Texture("player.png", engine);
-const player = new Sprite2D("player", scene.root, texture);
+const player = new Sprite2D("player");
+player.texture = texture;
 player.position.x = 100;
 player.position.y = 200;
 player.width = 64;
 player.height = 64;
 ```
+
+Sprites auto-register with the most recently created `Scene2D`, or you can pass one explicitly:
+
+```typescript
+const player = new Sprite2D("player", scene2D);
+```
+
+<Playground id="#EP0ZJV#1" title="Sprite2D Basics" description="Texture, tint, flip, and sourceRect" />
 
 ### Properties
 
@@ -56,12 +65,8 @@ For textures arranged in a uniform grid (all frames same size):
 ```typescript
 import { SpriteSheet } from "@babylonjs/2d";
 
-const sheet = SpriteSheet.FromGrid(texture, {
-    frameWidth: 32,
-    frameHeight: 32,
-    columns: 8,
-    rows: 4,
-});
+const sheet = SpriteSheet.FromGrid(texture, 32, 32, 32);
+// Parameters: texture, frameWidth, frameHeight, frameCount
 ```
 
 ### JSON Atlas
@@ -69,7 +74,7 @@ const sheet = SpriteSheet.FromGrid(texture, {
 For textures packed with tools like TexturePacker:
 
 ```typescript
-const sheet = await SpriteSheet.FromJSONAsync(texture, "sprites.json");
+const sheet = SpriteSheet.FromAtlas(texture, atlasData);
 ```
 
 ### Defining Animations
@@ -89,10 +94,12 @@ sheet.defineAnimation("jump", [16, 17, 18], 10);
 ```typescript
 import { AnimatedSprite2D } from "@babylonjs/2d";
 
-const player = new AnimatedSprite2D("player", scene.root, sheet);
+const player = new AnimatedSprite2D("player", sheet);
 player.play("walk");       // Loop the walk animation
 player.play("jump", false); // Play jump once
 ```
+
+<Playground id="#T6Q16K" title="Animated Sprites" description="SpriteSheet, AnimatedSprite2D, and animation playback" />
 
 ### Playback Control
 
@@ -108,7 +115,7 @@ player.currentFrame = 0;       // Jump to specific frame
 AnimatedSprite2D fires an observable when a non-looping animation completes:
 
 ```typescript
-player.onAnimationComplete.add((animName) => {
+player.onAnimationEnd.add((animName) => {
     if (animName === "attack") {
         player.play("idle");
     }
@@ -117,13 +124,13 @@ player.onAnimationComplete.add((animName) => {
 
 ### Update Loop
 
-Call `update(deltaTime)` each frame to advance animation:
+Animation advances automatically when you call `scene2D.update(dt)`:
 
 ```typescript
-engine.runRenderLoop(() => {
+scene.onAfterRenderObservable.add(() => {
     const dt = engine.getDeltaTime() / 1000;
-    player.update(dt);
-    scene.render();
+    scene2D.update(dt);      // Advances all animations
+    scene2D.renderContent();  // Renders all sprites
 });
 ```
 
