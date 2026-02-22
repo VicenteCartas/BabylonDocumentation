@@ -139,3 +139,34 @@ scene.onAfterRenderObservable.add(() => {
 - Use `flipX` for left/right facing instead of duplicating animation frames
 - SpriteSheets are reusable — create one and share across multiple AnimatedSprite2D instances
 - Set `sourceRect` on a plain Sprite2D to display a sub-region without needing a full SpriteSheet
+
+## Source Rectangles
+
+Use `sourceRect` to display a sub-region of a texture without a `SpriteSheet`. This is useful for quick prototyping or when you only need a few frames from a larger image.
+
+```typescript
+import { Sprite2D, Rectangle2D } from "@babylonjs/2d";
+
+const sprite = new Sprite2D("region");
+sprite.texture = texture;
+sprite.width = 128;
+sprite.height = 128;
+
+// Show a 64×64 region starting at pixel (64, 64) in the texture
+sprite.sourceRect = new Rectangle2D(64, 64, 64, 64);
+```
+
+You can also update `sourceRect` at runtime to cycle through regions manually:
+
+```typescript
+scene.onBeforeRenderObservable.add(() => {
+    const col = currentFrame % columns;
+    const row = Math.floor(currentFrame / columns);
+    sprite.sourceRect = new Rectangle2D(
+        col * frameWidth, row * frameHeight,
+        frameWidth, frameHeight,
+    );
+});
+```
+
+Playground **Source Rectangles** will go here (id: #JHCZ8B#1)
