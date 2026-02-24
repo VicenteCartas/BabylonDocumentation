@@ -271,6 +271,11 @@
                                     "children": {},
                                     "content": "features/featuresDeepDive/2d/sprites-and-animation"
                                 },
+                                "sprite-atlas-builder": {
+                                    "friendlyName": "Sprite Atlas Builder",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/sprite-atlas-builder"
+                                },
                                 "camera2d": {
                                     "friendlyName": "Camera2D",
                                     "children": {},
@@ -355,6 +360,11 @@
                                     "friendlyName": "Turn-Based Games",
                                     "children": {},
                                     "content": "features/featuresDeepDive/2d/turn-based"
+                                },
+                                "object-pooling": {
+                                    "friendlyName": "Object Pooling",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/object-pooling"
                                 }
                             },
                             "content": "features/featuresDeepDive/2d"
