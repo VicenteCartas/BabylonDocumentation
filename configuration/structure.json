@@ -276,6 +276,11 @@
                                     "children": {},
                                     "content": "features/featuresDeepDive/2d/sprite-atlas-builder"
                                 },
+                                "sprite-atlas-loading": {
+                                    "friendlyName": "Loading Sprite Atlases (JSON & XML)",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/sprite-atlas-loading"
+                                },
                                 "camera2d": {
                                     "friendlyName": "Camera2D",
                                     "children": {},
@@ -365,6 +370,21 @@
                                     "friendlyName": "Object Pooling",
                                     "children": {},
                                     "content": "features/featuresDeepDive/2d/object-pooling"
+                                },
+                                "renderTexture": {
+                                    "friendlyName": "Render Texture",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/renderTexture"
+                                },
+                                "parallax": {
+                                    "friendlyName": "Parallax Scrolling",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/parallax"
+                                },
+                                "masking": {
+                                    "friendlyName": "Masks & Clipping",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/masking"
                                 }
                             },
                             "content": "features/featuresDeepDive/2d"

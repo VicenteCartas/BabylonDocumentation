@@ -254,6 +254,7 @@ const levelAtlas = await levelBuilder.buildAsync();
 
 ## Cross-References
 
+- **[Loading Sprite Atlases (JSON & XML)](/features/featuresDeepDive/2d/sprite-atlas-loading)** — Load pre-packed atlases from TexturePacker, ShoeBox, and other tools
 - **[Sprites & Animation](/features/featuresDeepDive/2d/sprites-and-animation)** — Using Sprite2D and AnimatedSprite2D with atlas textures
 - **[Object Pooling](/features/featuresDeepDive/2d/object-pooling)** — Combine with pooling for maximum performance
 - **[Tilemaps](/features/featuresDeepDive/2d/tilemaps)** — Tilemap rendering also benefits from atlas textures

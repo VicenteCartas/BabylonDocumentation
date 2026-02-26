@@ -110,6 +110,58 @@ audioEngine.listener.position = new Vector3(
 );
 ```
 
+### SpatialAudio2D Utility
+
+The `@babylonjs/2d` package includes a `SpatialAudio2D` helper that automates the coordinate mapping and listener sync described above. It maps 2D world coordinates `(x, y)` to 3D `(x, y, 0)` internally, and keeps the Web Audio listener in sync with a [Camera2D](/features/featuresDeepDive/2d/camera2d).
+
+<Alert severity="info">
+`SpatialAudio2D` does **not** create or manage sounds — you still create sounds with AudioV2 directly. It only handles positioning and listener updates.
+</Alert>
+
+```typescript
+import { SpatialAudio2D } from "@babylonjs/2d/Audio/spatialAudio2D";
+
+const spatial = new SpatialAudio2D(engine);
+
+// Position a sound at 2D world coordinates
+spatial.setSoundPosition(explosionSound, 400, 300);
+
+// Attach a sound so it auto-tracks a Node2D's world position
+spatial.attachToNode(engineSound, spaceship);
+
+// Each frame: sync the listener to the camera and update all tracked sounds
+engine.runRenderLoop(() => {
+    const dt = engine.getDeltaTime() / 1000;
+    spatial.update(camera);   // camera is a Camera2D instance
+
+    scene.update(dt);
+    scene.render();
+});
+```
+
+To stop tracking a sound or clean up:
+
+```typescript
+// Stop tracking a single sound
+spatial.detachFromNode(engineSound);
+
+// Remove all attachments and release references
+spatial.dispose();
+```
+
+#### SpatialAudio2D API
+
+| Method / Property | Type | Description |
+|---|---|---|
+| `constructor(engine)` | `AbstractEngine` | Creates the utility, linked to the engine's audio context |
+| `engine` | `AbstractEngine` (readonly) | The engine associated with this instance |
+| `attachmentCount` | `number` (readonly) | Number of currently tracked sound-to-node attachments |
+| `update(camera)` | `Camera2D` → `void` | Syncs the Web Audio listener to the camera position and updates all attached sound positions. Call once per frame |
+| `setSoundPosition(sound, x, y)` | `Sound, number, number` → `void` | Sets a spatial sound's 3D position from 2D coordinates (maps to `(x, y, 0)`) |
+| `attachToNode(sound, node)` | `Sound, Node2D` → `void` | Registers a sound to automatically follow a Node2D's world position each `update()`. Replaces any previous attachment for that sound |
+| `detachFromNode(sound)` | `Sound` → `void` | Stops automatic position tracking for the given sound |
+| `dispose()` | `void` | Clears all attachments and releases references |
+
 ## Audio Buses (Mixing)
 
 Use buses to group sounds by category and control their volume independently:
