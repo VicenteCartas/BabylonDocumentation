@@ -20,7 +20,7 @@ Babylon.js 2D provides two approaches for text and UI:
 ```typescript
 import { Text2D } from "@babylonjs/2d/Text2D/text2D";
 
-const label = new Text2D("score", engine, "Score: 0", {
+const label = new Text2D("score", "Score: 0", {
     font: "24px Arial",
     color: "#ffffff",
 });
@@ -39,7 +39,7 @@ label.text = "Score: 100";
 ### Styling Options
 
 ```typescript
-const damage = new Text2D("dmg", engine, "-25", {
+const damage = new Text2D("dmg", "-25", {
     font: "bold 32px monospace",
     color: "#ff4444",
     textAlign: "center",     // "left", "center", "right"
@@ -55,7 +55,7 @@ Because `Text2D` is a `Node2D`, it works naturally with the scene graph:
 ```typescript
 // Attach to a sprite — label follows the sprite automatically
 const npc = new Sprite2D("npc", npcTexture);
-const nameTag = new Text2D("name", engine, "Merchant", {
+const nameTag = new Text2D("name", "Merchant", {
     font: "14px Arial",
     color: "#aaffaa",
 });

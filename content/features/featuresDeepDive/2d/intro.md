@@ -107,10 +107,12 @@ Both 2D and 3D scenes use the same `Engine` instance, sharing the GPU context, t
 
 ```typescript
 engine.runRenderLoop(() => {
-    scene3D.render();   // 3D background
-    scene2D.render();   // 2D gameplay on top
+    scene3D.render();          // 3D background
+    scene2D.renderContent();   // 2D gameplay on top (no extra beginFrame/endFrame)
 });
 ```
+
+> **Note:** Use `renderContent()` when compositing with a 3D scene — it renders the 2D layer without calling `beginFrame()`/`endFrame()`. Use `render()` when the 2D scene owns the entire frame.
 
 Playground **2D + 3D Compositing** will go here (id: #03W08W)
 

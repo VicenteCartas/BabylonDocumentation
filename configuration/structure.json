@@ -385,6 +385,16 @@
                                     "friendlyName": "Masks & Clipping",
                                     "children": {},
                                     "content": "features/featuresDeepDive/2d/masking"
+                                },
+                                "debug-rendering": {
+                                    "friendlyName": "Debug Rendering",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/debug-rendering"
+                                },
+                                "math-utilities": {
+                                    "friendlyName": "Math Utilities",
+                                    "children": {},
+                                    "content": "features/featuresDeepDive/2d/math-utilities"
                                 }
                             },
                             "content": "features/featuresDeepDive/2d"
